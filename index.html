@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 150px;
+        }
+        h1{
+            font-size: 96px;
+            background-color:black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #fff;
+            display: inline-block;
+            width: 700px;
+           text-align: center;
+           border-radius: 22px;
+           
+            
+            
+        }
+        </style>
+</head>
+<body onload="showTime()">
+    
+    <h1>
+        
+    </h1>
+ 
+</body>
+<script>
+    //   var date = new Date();
+    
+    // function getdate(){
+        //     document.getElementById('res').innerHTML = date;
+// }
+
+// function year(){
+//     document.getElementById('res').innerHTML = date.getFullYear();
+
+
+// }
+
+
+// function mon(){
+//     var month =["jan","feb","March","April","May","June","july","Augest","Sep","Oct","Nov","Dec"];
+//     document.getElementById('res').innerText = month[date.getMonth()];
+
+// }
+
+// function hours(){
+//     document.getElementById('res').innerHTML = date.getHours();
+// }
+
+// function min(){
+//     document.getElementById('res').innerHTML = date.getMinutes();
+// }
+
+// function getDate(){
+//     document.getElementById('res').innerHTML = date.getDate();
+// }
+
+// function getday(){
+//     document.getElementById('res').innerHTML = date.getDay();
+// }
+
+
+// function gettime(){
+//     document.getElementById('res').innerHTML = date.getTime();
+// }
+function showTime(){
+    let date = new Date();
+    let h = date.getHours();
+    let m = date.getMinutes();
+    let s = date.getSeconds();
+    let session = "AM"
+
+    if (h > 12){
+        h = h -12;
+    }
+
+    if(h => 12){
+        session = "AM";
+    }
+
+    h = h < 10 ? "0"+h : h;
+    m = m < 10 ? "0"+m : m;
+    s = s < 10 ? "0"+s : s;
+    let time = h + " : " + m + " : " + s + " " + session;
+document.getElementsByTagName('h1')[0].innerHTML = time;
+    setTimeout(showTime,1000);
+}
+
+
+</script>
+</html>
